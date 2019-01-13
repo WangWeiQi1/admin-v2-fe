@@ -16,7 +16,9 @@ module.exports = {
 	resolve: {
 		alias: {
 			page: path.resolve(__dirname, 'src/page'),
-			components: path.resolve(__dirname, 'src/components')
+			components: path.resolve(__dirname, 'src/components'),
+			utils: path.resolve(__dirname, 'src/utils'),
+			service: path.resolve(__dirname, 'src/service')
 		}
 	},
 	module: {
@@ -80,6 +82,17 @@ module.exports = {
 		//使8081端口定位到/dist/index.html
 		historyApiFallback: {
 			index: '/dist/index.html'
+		},
+		proxy: {
+			'/manage': {
+				target: 'http://admintest.happymmall.com',
+				changeOrigin: true
+			},
+			'/user': {
+				target: 'http://admintest.happymmall.com',
+				changeOrigin: true
+			}
+
 		}
 	}
 };
