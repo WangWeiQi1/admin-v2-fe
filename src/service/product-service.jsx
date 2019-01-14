@@ -87,7 +87,8 @@ class Product {
 			data: productInfo
 		})
 	}
-
+	
+	//根据父品类id获取品类列表
 	getCategoryList(parentCategoryId) {
 		return _mm.request({
 			type: 'post',
@@ -95,6 +96,22 @@ class Product {
 			data: {
 				categoryId: parentCategoryId || 0
 			}
+		})
+	}
+
+	saveCategory(category) {
+		return _mm.request({
+			type: 'post',
+			url: '/manage/category/add_category.do',
+			data: category
+		})
+	}
+
+	updateCategoryName(category) {
+		return _mm.request({
+			type: 'post',
+			url: '/manage/category/set_category_name.do',
+			data: category
 		})
 	}
 }
