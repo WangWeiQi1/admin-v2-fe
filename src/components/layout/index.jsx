@@ -5,6 +5,7 @@ import TopNav from 'components/top-nav/index.jsx'
 import SideNav from 'components/side-nav/index.jsx'
 
 import './theme.css'
+import './index.scss'
 
 class Layout extends Component{
 	constructor(props){
